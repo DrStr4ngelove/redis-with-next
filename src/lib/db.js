@@ -21,6 +21,6 @@ client.on("end", () => {
   console.log("!!!!!!!!!! Disconnected from Redis !!!!!!!!!!");
 });
 
-client.set("name", "mario");
+client.set("redis-client", "connected");
 
 export { client };
