@@ -12,11 +12,13 @@ client.on("error", (error) => {
   console.error(error);
 });
 
-client.on("connect", () => {
-  if (!client.isOpen) {
-    client.connect();
-    console.log("Connected to Redis");
-  }
+if (!client.isOpen) {
+  client.connect();
+  console.log("!!!!!!!!!! Connected to Redis !!!!!!!!!!");
+}
+
+client.on("end", () => {
+  console.log("!!!!!!!!!! Disconnected from Redis !!!!!!!!!!");
 });
 
 client.set("name", "mario");
